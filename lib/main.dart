@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: myWhite,
         useMaterial3: true,
-        fontFamily: GoogleFonts.prompt().fontFamily,
+        fontFamily: GoogleFonts.mitr().fontFamily,
       ),
       home: const BottomNavigatorPage(),
     );

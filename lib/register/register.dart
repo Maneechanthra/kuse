@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kuse/login/login_alumi.dart';
+import 'package:kuse/register/education_info.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -104,16 +105,24 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                height: 60,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: const Color.fromARGB(255, 109, 8, 0),
-                ),
-                child: const Center(
-                  child: Text(
-                    "สมัครสมาชิก",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EducationPage()));
+                },
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: const Color.fromARGB(255, 109, 8, 0),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "ถัดไป",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    ),
                   ),
                 ),
               ),

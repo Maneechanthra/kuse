@@ -1,32 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:kuse/model/department_model.dart';
+import 'package:kuse/model/course.dart';
 
-class DepartmentPage extends StatelessWidget {
-  const DepartmentPage({super.key});
+class CoursePage extends StatelessWidget {
+  const CoursePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "ภาควิชา",
-          style: TextStyle(
-            fontSize: 18,
-          ),
+          "หลักสูตร",
+          style: TextStyle(fontSize: 16),
         ),
       ),
-      body: _department(),
+      body: _course(),
     );
   }
 }
 
-Widget _department() {
+Widget _course() {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+    padding: const EdgeInsets.symmetric(
+      horizontal: 15,
+      vertical: 5,
+    ),
     child: ListView.builder(
-      itemCount: all_department.length,
-      itemBuilder: (BuildContext context, int index) {
-        Department item = all_department[index];
+      itemCount: all_courses.length,
+      itemBuilder: (BuildContext context, index) {
+        Course item = all_courses[index];
         return Column(
           children: [
             const Divider(),
@@ -50,9 +51,12 @@ Widget _department() {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            item.name_thai,
-                            style: const TextStyle(),
+                          SizedBox(
+                            width: 250,
+                            child: Text(
+                              item.name,
+                              style: const TextStyle(),
+                            ),
                           ),
                           const Icon(
                             Icons.arrow_forward_ios_outlined,
@@ -65,7 +69,6 @@ Widget _department() {
                 ),
               ),
             ),
-            index == all_department.length ? const Divider() : Container(),
           ],
         );
       },

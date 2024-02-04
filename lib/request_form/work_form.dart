@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kuse/register/education_info.dart';
 
-class WorkInfoPage extends StatelessWidget {
-  const WorkInfoPage({super.key});
+class WorkFormPage extends StatelessWidget {
+  const WorkFormPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: const Text(
-        "ข้อมูลการทำงาน",
+        "คำร้องขอแก้ไขข้อมูลการทำงาน",
         style: TextStyle(
           fontSize: 18,
         ),
@@ -220,11 +220,14 @@ class WorkInfoPage extends StatelessWidget {
                   ),
                   child: const Center(
                     child: Text(
-                      "ถัดไป",
+                      "บันทึกข้อมูล",
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 15,
               ),
             ],
           ),

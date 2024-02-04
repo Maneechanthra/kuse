@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kuse/widget/courses_info.dart';
 import 'package:kuse/widget/department.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -143,7 +144,7 @@ class DirectoryPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const DepartmentPage()));
+                        builder: (context) => const CoursePage()));
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kuse/model/category.dart';
+import 'package:kuse/widget/menu_profile.dart';
 import 'package:kuse/widget/personal_information.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -10,6 +11,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  bool isCurrentStudent = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +30,17 @@ class _ProfilePageState extends State<ProfilePage> {
                 const SizedBox(
                   height: 15,
                 ),
-                _category(context),
+                isCurrentStudent ? _category(context) : _nisit(context),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      isCurrentStudent = !isCurrentStudent;
+                    });
+                  },
+                  child: Text(
+                      isCurrentStudent ? 'แสดงนิสิตปัจจุบัน' : 'แสดงนิสิตเก่า'),
+                ),
               ],
             ),
           ),
@@ -55,6 +68,12 @@ Widget _category(BuildContext context) {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const PersonalPage()));
+                }
+                if (cate.id == 4) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RequiredmenuPage()));
                 }
               },
               child: Container(
@@ -91,5 +110,11 @@ Widget _category(BuildContext context) {
         );
       },
     ),
+  );
+}
+
+Widget _nisit(BuildContext context) {
+  return Container(
+    child: Text("นิสิตปัจจุบัน"),
   );
 }

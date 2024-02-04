@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kuse/model/course.dart';
-
 import 'package:kuse/model/department_model.dart';
 import 'package:kuse/register/work_info.dart';
 
-class EducationPage extends StatelessWidget {
-  const EducationPage({super.key});
+class EducationFormPage extends StatelessWidget {
+  const EducationFormPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: const Text(
-        "ข้อมูลการศึกษา",
+        "คำร้องขอแก้ไขข้อมูลการศึกษา",
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
       )),
       body: SingleChildScrollView(
@@ -28,7 +27,7 @@ class EducationPage extends StatelessWidget {
                 child: Image.asset("assets/img/logo/kuse_1.png"),
               ),
               const Text(
-                "ข้อมูลการศึกษา",
+                "ฟอร์มแก้ไขข้อมูลการศึกษา",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
               const SizedBox(
@@ -220,7 +219,7 @@ class EducationPage extends StatelessWidget {
                   ),
                   child: const Center(
                     child: Text(
-                      "ถัดไป",
+                      "บันทึกข้อมูล",
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),

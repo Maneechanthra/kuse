@@ -33,7 +33,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const Text(
                 "สมัครสมาชิก",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -41,7 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 60,
                   child: TextFormField(
                     decoration: InputDecoration(
-                      hintText: 'ชื่อ',
+                      hintText: 'ชื่อ-นามสกุล',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -49,19 +49,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 60,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'นามสกุล',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                ),
-              ),
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
+                padding: const EdgeInsets.only(top: 0.0),
                 child: SizedBox(
                   height: 60,
                   child: TextFormField(

@@ -51,10 +51,16 @@ class EducationFormPage extends StatelessWidget {
                       height: 60,
                       child: DropdownButtonFormField<int>(
                         decoration: InputDecoration(
-                          hintText: 'เลือกปี',
+                          hintText: 'เลือกปี:',
                           hintStyle: const TextStyle(
                               fontWeight: FontWeight.w400,
                               color: Colors.black26),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 180, 12, 0),
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -91,10 +97,16 @@ class EducationFormPage extends StatelessWidget {
                       height: 60,
                       child: DropdownButtonFormField<Department>(
                         decoration: InputDecoration(
-                          hintText: 'เลือกภาควิชา',
+                          hintText: 'เลือกภาควิชา:',
                           hintStyle: const TextStyle(
                             fontWeight: FontWeight.w200,
                             color: Colors.black26,
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 180, 12, 0),
+                            ),
+                            borderRadius: BorderRadius.circular(15),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -147,6 +159,12 @@ class EducationFormPage extends StatelessWidget {
                             fontWeight: FontWeight.w200,
                             color: Colors.black26,
                           ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 180, 12, 0),
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -173,44 +191,11 @@ class EducationFormPage extends StatelessWidget {
                   ],
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 10.0),
-              //   child: SizedBox(
-              //     height: 60,
-              //     child: TextFormField(
-              //       decoration: InputDecoration(
-              //         hintText: 'รหัสผ่าน',
-              //         border: OutlineInputBorder(
-              //           borderRadius: BorderRadius.circular(15),
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 10.0),
-              //   child: SizedBox(
-              //     height: 60,
-              //     child: TextFormField(
-              //       decoration: InputDecoration(
-              //         hintText: 'ยืนยันรหัสผ่าน',
-              //         border: OutlineInputBorder(
-              //           borderRadius: BorderRadius.circular(15),
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
               const SizedBox(
                 height: 10,
               ),
               InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const WorkInfoPage()));
-                },
+                onTap: () {},
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(

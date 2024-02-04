@@ -17,7 +17,7 @@ class WorkFormPage extends StatelessWidget {
       )),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,7 +27,7 @@ class WorkFormPage extends StatelessWidget {
                 child: Image.asset("assets/img/logo/kuse_1.png"),
               ),
               const Text(
-                "ข้อมูลการทำงาน",
+                "ฟอร์มแก้ไขข้อมูลการทำงาน",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
               const SizedBox(
@@ -54,6 +54,12 @@ class WorkFormPage extends StatelessWidget {
                           hintText: 'ระบุตำแหน่งงานปัจจุบันของคุณ',
                           hintStyle: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w100),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 180, 12, 0),
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -84,6 +90,12 @@ class WorkFormPage extends StatelessWidget {
                           hintText: 'ระบุสถานที่ทำงานของคุณ',
                           hintStyle: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w100),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 180, 12, 0),
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -130,6 +142,12 @@ class WorkFormPage extends StatelessWidget {
                               hintText: 'ระบุตำแหน่งงานของคุณ',
                               hintStyle: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w100),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: Color.fromARGB(255, 180, 12, 0),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
@@ -161,6 +179,12 @@ class WorkFormPage extends StatelessWidget {
                                   'ระบุฝ่ายงานของคุณ เช่น ฝ่ายบริหาร ฝ่ายกิจการนิสิต เป็นต้น',
                               hintStyle: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w100),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: Color.fromARGB(255, 180, 12, 0),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
@@ -191,6 +215,12 @@ class WorkFormPage extends StatelessWidget {
                               hintText: 'ระบุบริษัทหรือหน่วยงาน',
                               hintStyle: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w100),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: Color.fromARGB(255, 180, 12, 0),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
@@ -206,12 +236,7 @@ class WorkFormPage extends StatelessWidget {
                 height: 10,
               ),
               InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EducationPage()));
-                },
+                onTap: () {},
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(

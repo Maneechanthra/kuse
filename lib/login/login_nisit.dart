@@ -13,113 +13,75 @@ class _LoginNisitPageState extends State<LoginNisitPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text(
-        "เข้าสู่ระบบ",
-        style: TextStyle(
-          fontSize: 18,
+        title: const Text(
+          "เข้าสู่ระบบนิสิตปัจจุบัน",
+          style: TextStyle(fontSize: 18),
         ),
-      )),
-      body: Center(
-        child: SingleChildScrollView(
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(
+                  width: 150, child: Image.asset("assets/img/logo/kuse_1.png")),
               const Text(
-                "Login",
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.w200,
+                "เข้าสู่ระบบ",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              const Text(
+                "เข้าสู่ระบบด้วยบัญชีนนทรี",
+                style: TextStyle(color: Colors.black26),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                height: 60,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.email),
+                      hintText: "username",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      )),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                "Login with Nonri Account",
-                style: GoogleFonts.prompt(
-                  fontSize: 18,
-                  color: const Color.fromARGB(221, 155, 155, 155),
+              SizedBox(
+                height: 60,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.password_outlined),
+                      hintText: "Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      )),
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white,
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 0, 141, 122),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 13),
-                        child: TextFormField(
-                          textAlign: TextAlign.center,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Account Nontri",
-                            hintStyle: TextStyle(
-                              color: Color.fromARGB(255, 0, 141, 122),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white,
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 0, 141, 122),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 13),
-                        child: TextFormField(
-                          textAlign: TextAlign.center,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Password",
-                            hintStyle: TextStyle(
-                              color: Color.fromARGB(255, 0, 141, 122),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: const Color.fromARGB(255, 0, 141, 122),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Login",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+              const SizedBox(
+                height: 10,
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 0, 126, 42),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: const Center(
+                      child: Text(
+                    "เข้าสู่ระบบ",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  )),
                 ),
               ),
             ],

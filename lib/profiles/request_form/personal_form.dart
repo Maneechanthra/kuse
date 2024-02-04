@@ -8,9 +8,9 @@ class PersonalFormPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "คำร้องขอแก้ข้อมูลส่วนตัว",
+          "คำร้องขอแก้ไขข้อมูลส่วนตัว",
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 18,
           ),
         ),
       ),
@@ -36,7 +36,7 @@ class PersonalFormPage extends StatelessWidget {
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                "ชื่อ-นามสกุล",
+                "ชื่อ-นามสกุล: ",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
@@ -70,7 +70,7 @@ class PersonalFormPage extends StatelessWidget {
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      "อีเมล",
+                      "อีเมล: ",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
@@ -102,20 +102,23 @@ class PersonalFormPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color.fromARGB(255, 180, 12, 0),
-                ),
-                child: Center(
-                    child: Text(
-                  "บันทึกข้อมูล",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: const Color.fromARGB(255, 180, 12, 0),
                   ),
-                )),
+                  child: const Center(
+                      child: Text(
+                    "บันทึกข้อมูล",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  )),
+                ),
               ),
             ),
           ],

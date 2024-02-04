@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kuse/request_form/education_form.dart';
-import 'package:kuse/request_form/personal_form.dart';
+import 'package:kuse/profiles/request_form/education_form.dart';
+import 'package:kuse/profiles/request_form/personal_form.dart';
 
-import '../request_form/work_form.dart';
+import '../profiles/request_form/work_form.dart';
 
 class RequiredmenuPage extends StatelessWidget {
   const RequiredmenuPage({super.key});

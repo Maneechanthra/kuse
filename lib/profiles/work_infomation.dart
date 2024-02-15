@@ -9,7 +9,7 @@ class WorkinformationPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "ข้อมูลส่วนตัว",
+          "ข้อมูลการทำงาน",
           style: TextStyle(
             fontSize: 18,
           ),

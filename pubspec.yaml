@@ -38,6 +38,7 @@ dependencies:
   another_carousel_pro: ^1.0.2
   # webview_flutter: ^2.0.13
   url_launcher: ^6.2.4
+  webview_flutter: ^4.5.0
 
 dev_dependencies:
   flutter_test:

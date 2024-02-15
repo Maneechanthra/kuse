@@ -94,7 +94,7 @@ Widget _category(BuildContext context) {
               },
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.5,
-                height: 150,
+                height: MediaQuery.of(context).size.height * 0.19,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white,
@@ -138,7 +138,7 @@ Widget _nisit(BuildContext context) {
       ),
       Container(
         width: MediaQuery.of(context).size.width * 1.0,
-        height: 180,
+        height: 265,
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 255, 255, 255),
           borderRadius: BorderRadius.circular(15),
@@ -202,6 +202,36 @@ Widget _nisit(BuildContext context) {
                     width: 10,
                   ),
                   const Text("6440204052"),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 30,
+                    child: Image.asset("assets/img/icons/hierarchy.png"),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text("ภาควิชา: วิทยาคอมพิวเตอร์และสารสนเทศ"),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 30,
+                    child: Image.asset("assets/img/icons/education.png"),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text("หลักสูตร: วิทยาคอมพิวเตอร์"),
                 ],
               ),
             ],

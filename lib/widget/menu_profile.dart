@@ -14,7 +14,7 @@ class RequiredmenuPage extends StatelessWidget {
         title: const Text(
           "คำร้องขอแก้ไขข้อมูล",
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 18,
           ),
         ),
       ),

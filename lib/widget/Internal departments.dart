@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:kuse/model/course.dart';
+import 'package:kuse/model/internal_department_info.dart';
 
-class CoursePage extends StatelessWidget {
-  const CoursePage({super.key});
+class InternalDepartmentPage extends StatefulWidget {
+  const InternalDepartmentPage({super.key});
 
+  @override
+  State<InternalDepartmentPage> createState() => _InternalDepartmentPageState();
+}
+
+class _InternalDepartmentPageState extends State<InternalDepartmentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "หลักสูตร",
+          "หน่วยงานภายใน",
           style: TextStyle(fontSize: 18),
         ),
       ),
-      body: _course(),
+      body: _internalDepartment(),
     );
   }
 }
 
-Widget _course() {
+Widget _internalDepartment() {
   return Padding(
-    padding: const EdgeInsets.symmetric(
-      horizontal: 15,
-      vertical: 5,
-    ),
+    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
     child: ListView.builder(
-      itemCount: all_courses.length,
-      itemBuilder: (BuildContext context, index) {
-        Course item = all_courses[index];
+      itemCount: getInternalDepartments.length,
+      itemBuilder: (BuildContext context, int index) {
+        InternalDepartment item = getInternalDepartments[index];
         return Column(
           children: [
             const Divider(),
@@ -51,12 +53,9 @@ Widget _course() {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
-                            width: 250,
-                            child: Text(
-                              item.name,
-                              style: const TextStyle(),
-                            ),
+                          Text(
+                            item.name,
+                            style: const TextStyle(),
                           ),
                           const Icon(
                             Icons.arrow_forward_ios_outlined,
@@ -69,6 +68,9 @@ Widget _course() {
                 ),
               ),
             ),
+            index == getInternalDepartments.length
+                ? const Divider()
+                : Container(),
           ],
         );
       },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kuse/widget/Internal%20departments.dart';
 import 'package:kuse/widget/courses_info.dart';
 import 'package:kuse/widget/department.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,7 +23,7 @@ class DirectoryPage extends StatelessWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width * 1.0,
-              height: 220,
+              height: MediaQuery.of(context).size.height * 0.3,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
@@ -182,7 +183,12 @@ class DirectoryPage extends StatelessWidget {
             ),
             const Divider(),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const InternalDepartmentPage()));
+              },
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Row(

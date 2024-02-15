@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:kuse/model/webviews.dart';
 import 'package:kuse/widget/directory.dart';
+import 'package:kuse/widget/notifications.dart';
 // import 'package:kuse/widget/WebViewScreen.dart';
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:webview_flutter/webview_flutter.dart';
@@ -73,7 +74,13 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       flex: 1,
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const NotificationsPage()));
+                        },
                         icon: const Icon(Icons.notifications),
                       ),
                     ),
@@ -112,6 +119,7 @@ class _HomePageState extends State<HomePage> {
                         AssetImage("assets/img/photo/02.jpg"),
                         AssetImage("assets/img/photo/03.jpg"),
                         AssetImage("assets/img/logo/kuse_1.png"),
+                        AssetImage("assets/img/photo/04.jpg"),
                       ],
                     ),
                   ),

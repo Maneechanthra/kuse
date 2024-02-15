@@ -16,8 +16,8 @@ class _BottomNavigatorPageState extends State<BottomNavigatorPage> {
   List Page = [
     HomePage(),
     ProfilePage(),
-    MorePage(),
     SettingPage(),
+    MorePage(),
   ];
   bool showHomeIcon = true;
   @override
@@ -67,15 +67,15 @@ class _BottomNavigatorPageState extends State<BottomNavigatorPage> {
                   ),
                   label: 'โปรไฟล์',
                 ),
-                BottomNavigationBarItem(
-                  icon: SizedBox(
-                    width: 20,
-                    child: myCurrentIndex == 2
-                        ? Image.asset("assets/img/icons/more_active.png")
-                        : Image.asset("assets/img/icons/more.png"),
-                  ),
-                  label: 'เพิ่มเติม',
-                ),
+                // BottomNavigationBarItem(
+                //   icon: SizedBox(
+                //     width: 20,
+                //     child: myCurrentIndex == 2
+                //         ? Image.asset("assets/img/icons/more_active.png")
+                //         : Image.asset("assets/img/icons/more.png"),
+                //   ),
+                //   label: 'เพิ่มเติม',
+                // ),
                 BottomNavigationBarItem(
                   icon: SizedBox(
                     width: 20,

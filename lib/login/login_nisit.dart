@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginNisitPage extends StatefulWidget {
   const LoginNisitPage({super.key});
@@ -74,7 +73,7 @@ class _LoginNisitPageState extends State<LoginNisitPage> {
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 0, 126, 42),
+                    color: Color.fromARGB(255, 0, 104, 35),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: const Center(

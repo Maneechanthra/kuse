@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kuse/register/education_info.dart';
 
-class WorkInfoPage extends StatelessWidget {
+class WorkInfoPage extends StatefulWidget {
   const WorkInfoPage({super.key});
 
+  @override
+  State<WorkInfoPage> createState() => _WorkInfoPageState();
+}
+
+class _WorkInfoPageState extends State<WorkInfoPage> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +23,7 @@ class WorkInfoPage extends StatelessWidget {
       )),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -99,107 +105,141 @@ class WorkInfoPage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "ข้อมูลฝ่ายงานบริหาร",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.green),
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: isChecked,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            isChecked = value ?? false;
+                          });
+                        },
+                      ),
+                      const Text(
+                        "ข้อมูลฝ่ายงานบริหาร",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  if (isChecked)
+                    Column(
                       children: [
-                        Text(
-                          "ตำแหน่งงานในฝ่ายบริหาร: ",
-                          style: GoogleFonts.mitr(
-                            fontSize: 16,
+                        const SizedBox(height: 5),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "ตำแหน่งงานในฝ่ายบริหาร: ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(height: 5),
+                              SizedBox(
+                                height: 60,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    hintText: 'ระบุตำแหน่งงานของคุณ',
+                                    hintStyle: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w100,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 180, 12, 0),
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        SizedBox(
-                          height: 60,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              hintText: 'ระบุตำแหน่งงานของคุณ',
-                              hintStyle: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w100),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "ฝ่ายงาน: ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
+                              const SizedBox(height: 5),
+                              SizedBox(
+                                height: 60,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    hintText:
+                                        'ระบุฝ่ายงานของคุณ เช่น ฝ่ายบริหาร ฝ่ายกิจการนิสิต เป็นต้น',
+                                    hintStyle: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w100,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 180, 12, 0),
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "บริษัท/หน่วยงาน: ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(height: 5),
+                              SizedBox(
+                                height: 60,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    hintText: 'ระบุบริษัทหรือหน่วยงาน',
+                                    hintStyle: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w100,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                        color: Color.fromARGB(255, 180, 12, 0),
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "ฝ่ายงาน: ",
-                          style: GoogleFonts.mitr(
-                            fontSize: 16,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        SizedBox(
-                          height: 60,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              hintText:
-                                  'ระบุฝ่ายงานของคุณ เช่น ฝ่ายบริหาร ฝ่ายกิจการนิสิต เป็นต้น',
-                              hintStyle: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w100),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "บริษัท/หน่วยงาน: ",
-                          style: GoogleFonts.mitr(
-                            fontSize: 16,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        SizedBox(
-                          height: 60,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              hintText: 'ระบุบริษัทหรือหน่วยงาน',
-                              hintStyle: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w100),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 ],
               ),
               const SizedBox(

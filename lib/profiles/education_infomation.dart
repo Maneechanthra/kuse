@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kuse/profiles/request_form/education_form.dart';
-import 'package:kuse/profiles/request_form/work_form.dart';
 
 class EducationInfomationPage extends StatelessWidget {
   const EducationInfomationPage({super.key});
@@ -10,7 +9,7 @@ class EducationInfomationPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "ข้อมูลส่วนตัว",
+          "ข้อมูลการศึกษา",
           style: TextStyle(
             fontSize: 18,
           ),
@@ -70,19 +69,19 @@ Widget _education_info(BuildContext context) {
                     Icons.calendar_month,
                     color: Color.fromARGB(255, 241, 107, 98),
                   ),
-                  SizedBox(
-                    width: 15,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Text("ปีที่จบการศึกษา: 2565"),
                   ),
-                  Text("ปีที่จบการศึกษา: 2565"),
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 15,
               ),
               Row(
                 children: [
                   SizedBox(
-                    width: 30,
+                    width: 20,
                     child: Image.asset("assets/img/icons/hierarchy.png"),
                   ),
                   const SizedBox(
@@ -92,12 +91,12 @@ Widget _education_info(BuildContext context) {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 15,
               ),
               Row(
                 children: [
                   SizedBox(
-                    width: 30,
+                    width: 20,
                     child: Image.asset("assets/img/icons/education.png"),
                   ),
                   const SizedBox(

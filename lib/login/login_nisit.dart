@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kuse/botton_navigationbar/navigator_page.dart';
 
 class LoginNisitPage extends StatefulWidget {
   const LoginNisitPage({super.key});
@@ -8,6 +9,9 @@ class LoginNisitPage extends StatefulWidget {
 }
 
 class _LoginNisitPageState extends State<LoginNisitPage> {
+  final _loginNisitForm = GlobalKey<FormState>();
+  final studentIDController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,84 +24,109 @@ class _LoginNisitPageState extends State<LoginNisitPage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                  width: 150, child: Image.asset("assets/img/logo/kuse_1.png")),
-              const Text(
-                "เข้าสู่ระบบ",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              const Text(
-                "เข้าสู่ระบบด้วยบัญชีนนทรี",
-                style: TextStyle(color: Colors.black26),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              SizedBox(
-                height: 60,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.email),
-                      hintText: "username",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      )),
+          child: Form(
+            key: _loginNisitForm,
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                    width: 150,
+                    child: Image.asset("assets/img/logo/kuse_1.png")),
+                const Text(
+                  "เข้าสู่ระบบ",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                height: 60,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.password_outlined),
-                      hintText: "Password",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      )),
+                const SizedBox(
+                  height: 5,
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 0, 104, 35),
-                    borderRadius: BorderRadius.circular(15),
+                const Text(
+                  "เข้าสู่ระบบด้วยบัญชีนนทรี",
+                  style: TextStyle(color: Colors.black26),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                SizedBox(
+                  // height: 60,
+                  child: TextFormField(
+                    controller: studentIDController,
+                    decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.email),
+                        hintText: "username",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        )),
+                    onChanged: (String value) {},
+                    validator: (value) {
+                      return value!.isEmpty ? "กรุณากรอกบัญชีนนทรี" : null;
+                    },
                   ),
-                  child: const Center(
-                      child: Text(
-                    "เข้าสู่ระบบ",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  )),
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: GestureDetector(
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  // height: 60,
+                  child: TextFormField(
+                    obscureText: true,
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.password_outlined),
+                        hintText: "Password",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        )),
+                    onChanged: (String value) {},
+                    validator: (value) {
+                      print("object");
+                      return value!.isEmpty ? "กรุณากรอกรหัสผ่าน" : null;
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
                   onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) => _dialogNotification(context));
+                    if (_loginNisitForm.currentState!.validate()) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BottomNavigatorPage()));
+                    } else {
+                      print("เข้าสู่ระบบไม่สำเร็จ");
+                    }
                   },
-                  child: Text("ลืมรหัสผ่าน"),
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 0, 104, 35),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: const Center(
+                        child: Text(
+                      "เข้าสู่ระบบ",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    )),
+                  ),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: 10,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) => _dialogNotification(context));
+                    },
+                    child: Text("ลืมรหัสผ่าน"),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

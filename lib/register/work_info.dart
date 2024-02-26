@@ -14,6 +14,10 @@ class WorkInfoPage extends StatefulWidget {
 class _WorkInfoPageState extends State<WorkInfoPage> {
   bool isChecked = false;
   bool isUnemployed = false;
+  final _workRegisterForm = GlobalKey<FormState>();
+  final currentJobPositionController = TextEditingController();
+  final placeOfWorkController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,260 +31,280 @@ class _WorkInfoPageState extends State<WorkInfoPage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 80,
-                child: Image.asset("assets/img/logo/kuse_1.png"),
-              ),
-              const Text(
-                "ข้อมูลการทำงาน",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "ตำแหน่งงานปัจจุบัน: ",
-                      style: GoogleFonts.mitr(
-                        fontSize: 16,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    SizedBox(
-                      height: 60,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'ระบุตำแหน่งงานปัจจุบันของคุณ',
-                          hintStyle: const TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w100),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+          child: Form(
+            key: _workRegisterForm,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 80,
+                  child: Image.asset("assets/img/logo/kuse_1.png"),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "สถานที่ทำงาน: ",
-                      style: GoogleFonts.mitr(
-                        fontSize: 16,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    SizedBox(
-                      height: 60,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'ระบุสถานที่ทำงานของคุณ',
-                          hintStyle: const TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w100),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                const Text(
+                  "ข้อมูลการทำงาน",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+                const SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Checkbox(
-                        value: isChecked,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            isChecked = value ?? false;
-                            isUnemployed = false;
-                          });
-                        },
+                      Text(
+                        "ตำแหน่งงานปัจจุบัน: ",
+                        style: GoogleFonts.mitr(
+                          fontSize: 16,
+                        ),
                       ),
-                      const Text(
-                        "ข้อมูลฝ่ายงานบริหาร",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.green,
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      SizedBox(
+                        child: TextFormField(
+                          controller: currentJobPositionController,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            hintText: 'ระบุตำแหน่งงานปัจจุบันของคุณ',
+                            hintStyle: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w100),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                          onChanged: (String value) {},
+                          validator: (value) {
+                            return value!.isEmpty
+                                ? "กรุณากรอกข้อมูลตำแหน่งงานปัจจุบัน"
+                                : null;
+                          },
                         ),
                       ),
                     ],
                   ),
-                  Row(
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Checkbox(
-                        fillColor:
-                            MaterialStateProperty.resolveWith<Color>((states) {
-                          if (states.contains(MaterialState.selected)) {
-                            return const Color.fromARGB(255, 143, 10, 0);
-                          }
-                          return Colors.transparent;
-                        }),
-                        value: isUnemployed,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            isUnemployed = value ?? false;
-                            isChecked = false;
-                          });
-                        },
+                      Text(
+                        "สถานที่ทำงาน: ",
+                        style: GoogleFonts.mitr(
+                          fontSize: 16,
+                        ),
                       ),
-                      const Text(
-                        "ว่างงาน",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.green,
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      SizedBox(
+                        child: TextFormField(
+                          controller: placeOfWorkController,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            hintText: 'ระบุสถานที่ทำงานของคุณ',
+                            hintStyle: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w100),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                          onChanged: (String value) {},
+                          validator: (value) {
+                            return value!.isEmpty
+                                ? "กรุณากรอกข้อมูลสถานที่ทำงานปัจจุบัน"
+                                : null;
+                          },
                         ),
                       ),
                     ],
                   ),
-                  if (isChecked)
-                    Column(
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
-                        const SizedBox(height: 5),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "ตำแหน่งงานในฝ่ายบริหาร: ",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              SizedBox(
-                                height: 60,
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    hintText: 'ระบุตำแหน่งงานของคุณ',
-                                    hintStyle: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w100,
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color: Color.fromARGB(255, 180, 12, 0),
-                                      ),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        Checkbox(
+                          value: isChecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked = value ?? false;
+                              isUnemployed = false;
+                            });
+                          },
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "ฝ่ายงาน: ",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              SizedBox(
-                                height: 60,
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    hintText:
-                                        'ระบุฝ่ายงานของคุณ เช่น ฝ่ายบริหาร ฝ่ายกิจการนิสิต เป็นต้น',
-                                    hintStyle: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w100,
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color: Color.fromARGB(255, 180, 12, 0),
-                                      ),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "บริษัท/หน่วยงาน: ",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              SizedBox(
-                                height: 60,
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    hintText: 'ระบุบริษัทหรือหน่วยงาน',
-                                    hintStyle: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w100,
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color: Color.fromARGB(255, 180, 12, 0),
-                                      ),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                        const Text(
+                          "ข้อมูลฝ่ายงานบริหาร",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.green,
                           ),
                         ),
                       ],
                     ),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-            ],
+                    Row(
+                      children: [
+                        Checkbox(
+                          fillColor: MaterialStateProperty.resolveWith<Color>(
+                              (states) {
+                            if (states.contains(MaterialState.selected)) {
+                              return const Color.fromARGB(255, 143, 10, 0);
+                            }
+                            return Colors.transparent;
+                          }),
+                          value: isUnemployed,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isUnemployed = value ?? false;
+                              isChecked = false;
+                            });
+                          },
+                        ),
+                        const Text(
+                          "ว่างงาน",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.green,
+                          ),
+                        ),
+                      ],
+                    ),
+                    if (isChecked)
+                      Column(
+                        children: [
+                          const SizedBox(height: 5),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "ตำแหน่งงานในฝ่ายบริหาร: ",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                SizedBox(
+                                  height: 60,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                      hintText: 'ระบุตำแหน่งงานของคุณ',
+                                      hintStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w100,
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 180, 12, 0),
+                                        ),
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "ฝ่ายงาน: ",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                SizedBox(
+                                  height: 60,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                      hintText:
+                                          'ระบุฝ่ายงานของคุณ เช่น ฝ่ายบริหาร ฝ่ายกิจการนิสิต เป็นต้น',
+                                      hintStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w100,
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 180, 12, 0),
+                                        ),
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "บริษัท/หน่วยงาน: ",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                SizedBox(
+                                  height: 60,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                      hintText: 'ระบุบริษัทหรือหน่วยงาน',
+                                      hintStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w100,
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 180, 12, 0),
+                                        ),
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -292,10 +316,16 @@ class _WorkInfoPageState extends State<WorkInfoPage> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const WorkInfoPage()));
+                  if (isUnemployed == false) {
+                    if (_workRegisterForm.currentState!.validate()) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WorkInfoPage()));
+                    } else {
+                      print("กรอกข้อมูลไม่ถูกต้อง");
+                    }
+                  } else {}
                 },
                 child: Container(
                   height: 100,

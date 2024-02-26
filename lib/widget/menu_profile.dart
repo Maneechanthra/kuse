@@ -57,6 +57,7 @@ Widget _menu(BuildContext context) {
                       children: [
                         Text(
                           "คำร้องขอแก้ไขข้อมูลส่วนตัว",
+                          style: TextStyle(fontSize: 18),
                         ),
                         Icon(
                           Icons.arrow_forward_ios_outlined,
@@ -96,6 +97,7 @@ Widget _menu(BuildContext context) {
                       children: [
                         Text(
                           "คำร้องขอแก้ไขข้อมูลการศึกษา",
+                          style: TextStyle(fontSize: 18),
                         ),
                         Icon(
                           Icons.arrow_forward_ios_outlined,
@@ -135,6 +137,7 @@ Widget _menu(BuildContext context) {
                       children: [
                         Text(
                           "คำร้องขอแก้ไขข้อมูลทำงาน",
+                          style: TextStyle(fontSize: 18),
                         ),
                         Icon(
                           Icons.arrow_forward_ios_outlined,

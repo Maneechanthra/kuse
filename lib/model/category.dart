@@ -14,21 +14,21 @@ List<Categories> all_categories = [
   Categories(
     id: 1,
     title: "ข้อมูลส่วนตัว",
-    icon: "assets/img/icons/personal-card.png",
+    icon: "assets/img/icons/id-card2.png",
   ),
   Categories(
     id: 2,
-    title: "ตำแหน่งงาน",
-    icon: "assets/img/icons/job-position.png",
+    title: "ข้อมูลการทำงาน",
+    icon: "assets/img/icons/suitcase2.png",
   ),
   Categories(
     id: 3,
     title: "ข้อมูลการศึกษา",
-    icon: "assets/img/icons/library.png",
+    icon: "assets/img/icons/education.png",
   ),
   Categories(
     id: 4,
     title: "คำร้อง",
-    icon: "assets/img/icons/request.png",
+    icon: "assets/img/icons/petition.png",
   ),
 ];

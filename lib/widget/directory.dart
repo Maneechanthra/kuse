@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kuse/widget/Internal%20departments.dart';
+import 'package:kuse/widget/Internal_departments.dart';
 import 'package:kuse/widget/courses_info.dart';
 import 'package:kuse/widget/department.dart';
 import 'package:url_launcher/url_launcher.dart';

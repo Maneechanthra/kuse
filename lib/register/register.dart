@@ -41,6 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 60,
                   child: TextFormField(
                     decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.person_2),
                       hintText: 'ชื่อ-นามสกุล',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -55,6 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 60,
                   child: TextFormField(
                     decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.email),
                       hintText: 'อีเมล',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -69,6 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 60,
                   child: TextFormField(
                     decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.password),
                       hintText: 'รหัสผ่าน',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -83,6 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 60,
                   child: TextFormField(
                     decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.password),
                       hintText: 'ยืนยันรหัสผ่าน',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),

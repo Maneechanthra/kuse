@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:kuse/widget/notifications.dart';
-
 class Notifications {
   final int id;
   final String title;

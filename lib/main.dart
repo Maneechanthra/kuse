@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: myWhite,
         useMaterial3: true,
-        fontFamily: GoogleFonts.mitr().fontFamily,
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: GoogleFonts.prompt().fontFamily,
       ),
       home: const BottomNavigatorPage(),
     );

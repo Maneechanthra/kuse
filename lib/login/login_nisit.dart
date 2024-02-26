@@ -83,10 +83,70 @@ class _LoginNisitPageState extends State<LoginNisitPage> {
                   )),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => _dialogNotification(context));
+                  },
+                  child: Text("ลืมรหัสผ่าน"),
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+Widget _dialogNotification(BuildContext context) {
+  return Dialog(
+    child: Container(
+      width: MediaQuery.of(context).size.width,
+      height: 200,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Text(
+                "กรุณาติดต่อเจ้าหน้าที่!",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+            ),
+            Divider(),
+            Text(
+              "หากลืมรหัสผ่านกรุณาติดต่อฝ่ายรับเข้า!",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Tel: 086 224 1118",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              "email: admission.occ-csc@ku.th",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }

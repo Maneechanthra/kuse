@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kuse/model/course.dart';
 import 'package:kuse/model/department_model.dart';
-import 'package:kuse/register/work_info.dart';
 
 class EducationFormPage extends StatelessWidget {
   const EducationFormPage({super.key});

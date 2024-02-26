@@ -41,7 +41,7 @@ Widget _personal_info(BuildContext context) {
       ),
       Container(
         width: MediaQuery.of(context).size.width * 1.0,
-        height: 130,
+        height: 240,
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 255, 255, 255),
           borderRadius: BorderRadius.circular(15),
@@ -54,38 +54,60 @@ Widget _personal_info(BuildContext context) {
           ],
         ),
         child: const Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "ข้อมูลส่วนตัว",
+                "ชื่อ-นามสกุล:",
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "นายสุเมธ มณีจันทรา",
                 style: TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 156, 0, 0),
                 ),
               ),
               Divider(),
-              Row(
-                children: [
-                  Icon(Icons.person),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text("สุเมธ มณีจันทรา"),
-                ],
+              Text(
+                "ภาควิชา:",
+                style: TextStyle(fontSize: 14),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
-              Row(
-                children: [
-                  Icon(Icons.email),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text("sumet.ma@ku.th"),
-                ],
+              Text(
+                "วิทยาการคอมพิวเตอร์และสารสนเทศ",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 156, 0, 0),
+                ),
               ),
+              Divider(),
+              Text(
+                "หลักสูตร:",
+                style: TextStyle(fontSize: 14),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "วิทยาการคอมพิวเตอร์",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 156, 0, 0),
+                ),
+              ),
+              Divider(),
             ],
           ),
         ),

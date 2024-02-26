@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kuse/model/department_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DepartmentPage extends StatelessWidget {
   const DepartmentPage({super.key});
@@ -31,7 +32,9 @@ Widget _department() {
           children: [
             const Divider(),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                launch('https://www.facebook.com/CISKUCSC');
+              },
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Row(

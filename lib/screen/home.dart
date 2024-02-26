@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -107,20 +108,24 @@ class _HomePageState extends State<HomePage> {
                   height: 10,
                 ),
                 Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  width: double.infinity,
-                  height: 200,
-                  child: ClipRRect(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    child: AnotherCarousel(
-                      images: const [
-                        AssetImage("assets/img/photo/01.jpg"),
-                        AssetImage("assets/img/photo/02.jpg"),
-                        AssetImage("assets/img/photo/03.jpg"),
-                        AssetImage("assets/img/logo/kuse_1.png"),
-                        AssetImage("assets/img/photo/04.jpg"),
-                      ],
+                  ),
+                  width: double.infinity,
+                  // height: MediaQuery.of(context).size.height * 0.4,
+                  child: AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: AnotherCarousel(
+                        images: const [
+                          AssetImage("assets/img/photo/01.jpg"),
+                          AssetImage("assets/img/photo/02.jpg"),
+                          AssetImage("assets/img/photo/03.jpg"),
+                          AssetImage("assets/img/logo/kuse_1.png"),
+                          AssetImage("assets/img/photo/04.jpg"),
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -205,23 +205,59 @@ class EducationPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              // InkWell(
+              //   onTap: () {
+              //     Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) => const WorkInfoPage()));
+              //   },
+              //   child: Container(
+              //     height: 50,
+              //     decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(15),
+              //       color: const Color.fromARGB(255, 109, 8, 0),
+              //     ),
+              //     child: const Center(
+              //       child: Text(
+              //         "ถัดไป",
+              //         style: TextStyle(fontSize: 16, color: Colors.white),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+            ],
+          ),
+        ),
+      ),
+      persistentFooterButtons: [
+        Container(
+          height: 90,
+          child: ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: [
               InkWell(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const WorkInfoPage()));
                 },
                 child: Container(
-                  height: 50,
+                  height: 100,
+                  width: MediaQuery.of(context).size.width,
+                  margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     color: const Color.fromARGB(255, 109, 8, 0),
                   ),
                   child: const Center(
                     child: Text(
                       "ถัดไป",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -229,7 +265,7 @@ class EducationPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      ],
     );
   }
 }

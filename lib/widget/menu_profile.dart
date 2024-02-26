@@ -60,7 +60,7 @@ Widget _menu(BuildContext context) {
                         ),
                         Icon(
                           Icons.arrow_forward_ios_outlined,
-                          size: 16,
+                          size: 18,
                         ),
                       ],
                     ),
@@ -99,7 +99,7 @@ Widget _menu(BuildContext context) {
                         ),
                         Icon(
                           Icons.arrow_forward_ios_outlined,
-                          size: 16,
+                          size: 18,
                         ),
                       ],
                     ),
@@ -138,7 +138,7 @@ Widget _menu(BuildContext context) {
                         ),
                         Icon(
                           Icons.arrow_forward_ios_outlined,
-                          size: 16,
+                          size: 18,
                         ),
                       ],
                     ),

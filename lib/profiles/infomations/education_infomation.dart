@@ -36,7 +36,7 @@ Widget _education_info(BuildContext context) {
       ),
       Container(
         width: MediaQuery.of(context).size.width * 1.0,
-        height: 185,
+        height: 240,
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 255, 255, 255),
           borderRadius: BorderRadius.circular(15),
@@ -48,63 +48,59 @@ Widget _education_info(BuildContext context) {
             )
           ],
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+        child: const Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "ข้อมูลการศึกษา",
+              Text(
+                "ปีที่จบการศึกษา:",
+                style: TextStyle(fontSize: 14),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "2566",
                 style: TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 156, 0, 0),
                 ),
               ),
-              const Divider(),
-              const SizedBox(
-                height: 10,
+              Divider(),
+              Text(
+                "ภาควิชา:",
+                style: TextStyle(fontSize: 14),
               ),
-              const Row(
-                children: [
-                  Icon(
-                    Icons.calendar_month,
-                    color: Color.fromARGB(255, 241, 107, 98),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text("ปีที่จบการศึกษา: 2565"),
-                  ),
-                ],
+              SizedBox(
+                height: 5,
               ),
-              const SizedBox(
-                height: 15,
+              Text(
+                "วิทยาการคอมพิวเตอร์และสารสนเทศ",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 156, 0, 0),
+                ),
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 20,
-                    child: Image.asset("assets/img/icons/hierarchy.png"),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const Text("ภาควิชา: วิทยาคอมพิวเตอร์และสารสนเทศ"),
-                ],
+              Divider(),
+              Text(
+                "หลักสูตร:",
+                style: TextStyle(fontSize: 14),
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: 5,
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 20,
-                    child: Image.asset("assets/img/icons/education.png"),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const Text("หลักสูตร: วิทยาคอมพิวเตอร์"),
-                ],
+              Text(
+                "วิทยาการคอมพิวเตอร์",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 156, 0, 0),
+                ),
               ),
+              Divider(),
             ],
           ),
         ),
